@@ -7,9 +7,13 @@ import javax.swing.JOptionPane;
 
 import classes.Aluno;
 import classes.Livro;
+import classes.Locacao;
+import telas.TlAlteracaoAlu;
 import telas.TlCadastroAlu;
 import telas.TlCadastroLivro;
 import telas.TlInicial;
+import telas.TlRelatorioAluno;
+import telas.TlRelatorioLivro;
 
 
 public class Principal {
@@ -17,21 +21,13 @@ public class Principal {
 	public static void main(String[] args) {
 		
 		ArrayList<Aluno> alunos = new ArrayList<>();
+		
 		ArrayList<Livro> livros = new ArrayList<>();
 		
-		TlCadastroAlu telaCadastroAlu = new TlCadastroAlu(alunos);
-		TlCadastroLivro telaCadastroLivro = new TlCadastroLivro(livros);
+		ArrayList<Locacao> locacoes = new ArrayList<>();
 		
-		TlInicial telaInicial = new TlInicial(alunos, livros);
-		telaInicial.setVisible(true);
-		
-
-		
-		
-		
-	
-		
-		
+		TlInicial telaInicial = new TlInicial(locacoes, alunos, livros);
+		telaInicial.setVisible(true);		
 		
 		
 	}
