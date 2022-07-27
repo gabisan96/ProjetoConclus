@@ -1,0 +1,39 @@
+
+
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import classes.Aluno;
+import classes.Livro;
+import telas.TlCadastroAlu;
+import telas.TlCadastroLivro;
+import telas.TlInicial;
+
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Aluno> alunos = new ArrayList<>();
+		ArrayList<Livro> livros = new ArrayList<>();
+		
+		TlCadastroAlu telaCadastroAlu = new TlCadastroAlu(alunos);
+		TlCadastroLivro telaCadastroLivro = new TlCadastroLivro(livros);
+		
+		TlInicial telaInicial = new TlInicial(alunos, livros);
+		telaInicial.setVisible(true);
+		
+
+		
+		
+		
+	
+		
+		
+		
+		
+	}
+
+}
