@@ -1,5 +1,6 @@
 package classes;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -13,8 +14,8 @@ public class Aluno {
 	private String nome;
 	private String cpf;
 	private Integer idade;
-	public TlCadastroAlu telaAluno;
-	ArrayList<Aluno> alunos = new ArrayList<>();
+	
+	
 	
 	public Aluno() {
 	
@@ -70,7 +71,7 @@ public class Aluno {
 
 	
 	public String toString() {
-		return "Id: " + id + " | Nome:" + nome + " | Cpf=" + cpf + " | Idade=" + idade;
+		return "Id: " + id + " | Nome: " + nome + " | Cpf: " + cpf + " | Idade: " + idade;
 	}
 	
 	
@@ -82,6 +83,51 @@ public class Aluno {
 		this.setId(getProximoId());
 		
 		return this;
+	}
+	
+	public String listar(ArrayList<Aluno>alunos) {
+		
+		String listaAluno = "";
+		for (Aluno aluno : alunos) {
+			listaAluno += aluno + "\n";
+			}
+		return listaAluno;
+		
+		
+	}
+	
+
+	
+	public Aluno alterar (Integer id, String nome, String cpf, Integer idade ) {
+		
+		this.setId(id);
+		this.setNome(nome);
+		this.setCpf(cpf);
+		this.setIdade(idade);
+		
+		return this;
+	}
+	
+	public void remover (Integer id) {
+		
+		ArrayList<Aluno> alunos = new ArrayList<Aluno>();
+		for (int i = 0; i < alunos.size(); i++) {
+			if (id.equals(alunos.get(i).getId())) {
+				alunos.remove(alunos.get(i));
+				
+			}
+		}
+		
+	}
+	
+	public  Aluno consultarPorId(ArrayList<Aluno> alunos, Integer id) {
+		
+		for (Aluno aluno : alunos) {
+			if(aluno.getId().equals(id)) {
+				return aluno;
+			}
+		}
+		return null;
 	}
 	
 	
